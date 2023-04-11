@@ -5,8 +5,8 @@ function App() {
   // useState is a hook and used down below in the return so it can be rendered on the server 
   const [todoitems, setTodoItems] = useState([
     { name : "Buy Shopping", priority: "high", id:1},
-    { name : "Clean Bathroom", priority: "low", id:2},
-    { name : "Car's MOT", priority: "high", id:3},
+    { name : "Clean Bathroom", priority: "medium", id:2},
+    { name : "Car's MOT", priority: "low", id:3},
   ]);
  
   const [newToDoItem, setNewToDo] = useState(" ");
@@ -61,6 +61,16 @@ return(
             name="priority"
             value="high"
             checked={priorityResult === "high"}
+            onChange = {handlePriorityInput}
+            />
+
+        <label htmlFor="priority">Medium</label>
+        <input
+            type="radio"
+            id="medium"
+            name="priority"
+            value="medium"
+            checked={priorityResult === "medium"}
             onChange = {handlePriorityInput}
             />
         
